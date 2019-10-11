@@ -1,0 +1,51 @@
+///************************************///
+	Author  = Sigit wasis subekti
+	Github  = Sigit-Wasis
+///************************************///
+
+
+Documentation Online Shop Codeigniter
+
+
+1. langkah awal dalam pembuatan ini persiapan 
+	a. sublime text 
+	b. browser chromium
+	c. web server
+
+2. kemudian download tools pembuatan
+	a. framework codeigniter
+	b. template admin lte
+	c. template fashe untuk user
+
+3. buat folder assets pada folder project isikan :
+	a. folder admin -> admin lte
+	b. folder template -> fashe untuk user
+
+4. setting config dan autoload dan database
+	a. config => base_url = http://localhost/lapak_kampoeng
+	b. autoload 
+			=> helper = array('url', 'form');
+			=> libraries = array('database', 'form_validation', 'session');
+	c. 	username = "root";
+		password = "123";
+		database = "lapak_kampoeng";
+
+5. buat login untuk admin dan dashboard
+	a. buat controller login 
+	b. buat view login->list.php
+	c. copy dari template untuk tampilan
+	d. run http://localhost/lapak_kampoeng/index.php/login
+
+6. menghilangkan index.php dengan cara buka localhost/lapak_kampoeng/user_guide
+	search htaccess copy kemudian buat file fi folder project dengan nama .htaccess.
+
+
+NB =====> ( UNTUK mengganti seluruh bisa menggunakan ctrl + d atau ctrl + h)
+   =====> ( UNTUK memanggil data php bisa menggunakan <?= $title ?> sama halnya echo)
+   =====> ( UNTUK mereplace dapat melakukan dengan ctrl + h kemudian replace all)
+
+   Untuk Membuat CKEDITOR dapat di download di ckeditor.com pilih yang version ke - 4.
+   Kemudian ckeditornya dan load  {sample.js dan ckeditor.js}
+   serta tambahkan script di bagian footer, dan tambahkan id="editor" pada form inputan.
+
+7. CTRL + A -> CTRL + KURUNG KOTAK = untuk membuat baris kode rapi ke kiri
