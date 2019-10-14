@@ -135,11 +135,82 @@ class Produk extends CI_Controller {
 		 					'produk'			=> $produk,
 		 					'produk_related'	=> $produk_related,
 		 					'gambar'			=> $gambar,
-		 					'isi'				=> 'produk/detail',
+		 					'isi'				=> 'v_produk/detail',
 		 			  	);
-		$this->load->view('layout/wrapper', $data, FALSE);
+		$this->load->view('v_layouts/wrapper', $data, FALSE);
 	}
 
+	// Membuat Search Autocomplete
+	public function get_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->produk_model->search_blog($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nama_produk;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
+    public function search(){
+    	
+    	$site 	= $this->konfigurasi_model->listing();
+		$listing_kategori = $this->produk_model->listing_kategori();
+		// ambil data total
+		$total = $this->produk_model->total_produk();
+		// Pagination start
+		$this->load->library('pagination');
+		
+		$config['base_url'] 		= base_url().'produk/index/';
+		$config['total_rows'] 		= $total->total;
+		$config['use_page_number']	= TRUE;
+		$config['per_page'] 		= 18;
+		$config['uri_segment'] 		= 3;
+		$choice = $config["total_rows"] / $config["per_page"];
+		$config['num_links'] 		= floor($choice);
+
+		// Membuat Style pagination untuk BootStrap v4
+      	$config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+		$config['first_url']		= base_url().'/produk/';
+		
+		$this->pagination->initialize($config);
+		// Ambil data produk
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$produk = $this->produk_model->produk($config['per_page'], $page);
+		// End pagination
+
+		$title=$this->input->get('title');
+
+		$search = $this->produk_model->search_blog($title);
+
+		$data 	= array (	'title' 			=> 'Produk '.$site->namaweb,
+		 					'site'				=> $site,
+		 					'listing_kategori'	=> $listing_kategori,
+		 					'produk'			=> $produk,
+		 					'pagin'				=> $this->pagination->create_links(),
+		 					'isi'				=> 'v_produk/search',
+							'data'				=> $search,
+						);
+
+		$this->load->view('v_layouts/wrapper',$data);
+	}
 }
 
 /* End of file Produk.php */

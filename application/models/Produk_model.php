@@ -267,6 +267,14 @@ class Produk_model extends CI_Model {
 		$this->db->where('id_gambar', $data['id_gambar']);
 		$this->db->delete('gambar', $data);
 	}
+
+	// Seach Autocomplete
+	public function search_blog($title){
+        $this->db->like('nama_produk', $title);
+        $this->db->order_by('nama_produk', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('produk')->result();
+    }
 }
 
 /* End of file Produk_model.php */

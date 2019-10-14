@@ -18,5 +18,6 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/slick.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/main-color04.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/jquery-ui.css">
 </head>
 <body class="biolife-body">

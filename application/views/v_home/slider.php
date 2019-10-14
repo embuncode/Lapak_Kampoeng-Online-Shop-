@@ -283,9 +283,9 @@
                                     <div class="slide-contain slider-opt04__layout01 light-version first-slide">
                                         <div class="media"></div>
                                         <div class="text-content">
-                                            <i class="first-line">Pomegranate</i>
-                                            <h3 class="second-line">Vegetables 100% Organic</h3>
-                                            <p class="third-line">A blend of freshly squeezed green apple & fruits</p>
+                                            <i class="first-line">Tempatnya</i>
+                                            <h3 class="second-line">Sayuran Segar</h3>
+                                            <p class="third-line">Belanja Sayur dan Kebutuhan Dapur dengan Hemat</p>
                                             <p class="buttons">
                                                 <a href="<?= base_url('produk') ?>" class="btn btn-bold">Ayo Belanja</a>
                                                 <a href="#" class="btn btn-thin">Alur Belanja</a>
@@ -297,9 +297,9 @@
                                     <div class="slide-contain slider-opt04__layout01 light-version second-slide">
                                         <div class="media"></div>
                                         <div class="text-content">
-                                            <i class="first-line">Pomegranate</i>
-                                            <h3 class="second-line">Vegetables 100% Organic</h3>
-                                            <p class="third-line">A blend of freshly squeezed green apple & fruits</p>
+                                            <i class="first-line">Tempatnya</i>
+                                            <h3 class="second-line">Sayuran Segar</h3>
+                                            <p class="third-line">Belanja Sayur dan Kebutuhan Dapur dengan Hemat</p>
                                             <p class="buttons">
                                                 <a href="<?= base_url('produk') ?>" class="btn btn-bold">Ayo Belanja</a>
                                                 <a href="#" class="btn btn-thin">Alur Belanja</a>
@@ -311,9 +311,9 @@
                                     <div class="slide-contain slider-opt04__layout01 light-version third-slide">
                                         <div class="media"></div>
                                         <div class="text-content">
-                                            <i class="first-line">Pomegranate</i>
-                                            <h3 class="second-line">Vegetables 100% Organic</h3>
-                                            <p class="third-line">A blend of freshly squeezed green apple & fruits</p>
+                                            <i class="first-line">Tempatnya</i>
+                                            <h3 class="second-line">Sayuran Segar</h3>
+                                            <p class="third-line">Belanja Sayur dan Kebutuhan Dapur dengan Hemat</p>
                                             <p class="buttons">
                                                 <a href="<?= base_url('produk') ?>" class="btn btn-bold">Ayo Belanja</a>
                                                 <a href="#" class="btn btn-thin">Alur Belanja</a>

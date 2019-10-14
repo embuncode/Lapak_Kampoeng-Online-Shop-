@@ -33,10 +33,8 @@
                     <div class="col-lg-9 col-md-8 padding-top-2px">
                         <div class="header-search-bar layout-01">                               
                             <form id="form_search" class="form-search" name="desktop-search" action="<?php echo site_url('produk/search');?>" method="GET">
-                                <div class="input-group">
                                     <input type="text" name="title" class="input-text" id="title" placeholder="Aku Mau Beli" style="width:500px;">
                                     <button type="submit" class="btn-submit"><i class="biolife-icon icon-search"></i></button>
-                                </div>
                             </form>
                         </div>
                         <div class="live-info">
@@ -73,7 +71,7 @@
                 <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-category grid-style">
                         <div class="row">
-                            <?php foreach ($produk as $produk) { ?>
+                            <?php foreach ($data as $produk) { ?>
                             <ul class="products-list">
 
                                 <!-- Form untuk proses belanjaan-->

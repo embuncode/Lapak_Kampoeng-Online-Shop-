@@ -289,6 +289,19 @@
     <script src="<?= base_url() ?>assets/templates/js/slick.min.js"></script>
     <script src="<?= base_url() ?>assets/templates/js/biolife.framework.js"></script>
     <script src="<?= base_url() ?>assets/templates/js/functions.js"></script>
+    <script src="<?= base_url() ?>assets/templates/js/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#title').autocomplete({
+                source: "<?php echo site_url('produk/get_autocomplete');?>",
+     
+                select: function (event, ui) {
+                    $(this).val(ui.item.label);
+                    $("#form_search").submit(); 
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
